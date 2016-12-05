@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="grandeza_resistencia">
+        <item>pΩ</item>
+        <item>nΩ</item>
+        <item>µΩ</item>
+        <item>mΩ</item>
+        <item>Ω</item>
+        <item>kΩ</item>
+        <item>MΩ</item>
+        <item>GΩ</item>
+        <item>TΩ</item>
+    </string-array>
+
+    <string-array name="grandeza_corrente">
+        <item>pA</item>
+        <item>nA</item>
+        <item>µA</item>
+        <item>mA</item>
+        <item>A</item>
+        <item>kA</item>
+        <item>MA</item>
+        <item>GA</item>
+        <item>TA</item>
+    </string-array>
+</resources>

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">BoardCircuit</string>
+    <string name="title_activity_condutance">condutanceActivity</string>
+    <string name="title_activity_ohm_calculator_select">ohmCalculatorSelect</string>
+    <string name="title_activity_ohm_voltage">OhmVoltage</string>
+    <string name="title_activity_sscreen">sscreen</string>
+    <string name="action_settings">Settings</string>
+</resources>
