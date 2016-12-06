@@ -13,4 +13,40 @@
     tools:context="vmac.boardcircuit.condutanceActivity"
     tools:showIn="@layout/activity_condutance">
 
+    <TableRow
+        android:id="@+id/tableRow1"
+        android:layout_height="280dp"
+        android:gravity="left"
+        android:layout_width="match_parent"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:text="Valor resistencia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:id="@+id/resisitorText" />
+
+        <EditText
+            android:layout_width="60dp"
+            android:layout_marginLeft="10dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:text=" "
+            android:ems="10"
+            android:id="@+id/ohmInput" />
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="5dp"
+            android:entries="@array/grandeza_resistencia"
+            android:id="@+id/ohmType" />
+
+
+    </TableRow>
+
+
 </RelativeLayout>

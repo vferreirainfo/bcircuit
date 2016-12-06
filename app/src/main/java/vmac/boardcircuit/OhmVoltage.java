@@ -1,9 +1,13 @@
 package vmac.boardcircuit;
 
+
 import android.content.Intent;
+import android.graphics.Canvas;
+import android.graphics.Movie;
 import android.graphics.PixelFormat;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -22,6 +26,10 @@ import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.appindexing.Thing;
 import com.google.android.gms.common.api.GoogleApiClient;
 
+import java.io.InputStream;
+
+import static vmac.boardcircuit.R.drawable.wait;
+
 public class OhmVoltage extends AppCompatActivity {
 
     /**
@@ -32,7 +40,14 @@ public class OhmVoltage extends AppCompatActivity {
 
 
 
+
+
     private GoogleApiClient client;
+    private InputStream gifInputStream;
+    private Movie gifMovie;
+    private int movieWidth, movieHeight;
+    private long movieDuration;
+    private long movieStart;
 
     public void onAttachedToWindow() {
         super.onAttachedToWindow();
@@ -42,8 +57,9 @@ public class OhmVoltage extends AppCompatActivity {
 
     Thread splashTread;
 
-    @Override
+
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ohm_voltage);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -68,16 +84,25 @@ public class OhmVoltage extends AppCompatActivity {
 
     public void startAnimations(View view) {
 
+        //gifInputStream = this.getResources().openRawResource(R.drawable.wait);
+        gifInputStream = findViewById(R.id.img1).getResources().openRawResource(R.drawable.wait);
+        gifMovie = Movie.decodeStream(gifInputStream);
+        movieWidth = gifMovie.width();
+        movieHeight = gifMovie.height();
+        movieDuration = gifMovie.duration();
 
-        PlayGifView pGif = (PlayGifView) findViewById(R.id.viewGif);
-        pGif.setImageResource(R.drawable.wait);
 
         final float valueA, valueR;
+
         EditText mEdit, mEditI;
+
         final Resistor r = new Resistor();
+
+
         mEdit = (EditText)findViewById(R.id.ohmInput);
         valueR = Float.parseFloat(mEdit.getText().toString());
         r.setResistenceValue(valueR);
+
         mEditI = (EditText)findViewById(R.id.AmpereInput);
         valueA = Float.parseFloat(mEditI.getText().toString());
 
@@ -95,9 +120,11 @@ public class OhmVoltage extends AppCompatActivity {
         findViewById(R.id.ampereText).setVisibility(View.INVISIBLE);
         findViewById(R.id.AmpereType).setVisibility(View.INVISIBLE);
         findViewById(R.id.button).setVisibility(View.INVISIBLE);
-
+        findViewById(R.id.img1).setVisibility(View.VISIBLE);
         findViewById(R.id.waitMessage).setVisibility(View.VISIBLE);
 
+
+        /*
         Animation anim = AnimationUtils.loadAnimation(this, R.anim.alpha);
         anim.reset();
         RelativeLayout l = (RelativeLayout) findViewById(R.id.content_ohm_voltage);
@@ -106,10 +133,12 @@ public class OhmVoltage extends AppCompatActivity {
 
         anim = AnimationUtils.loadAnimation(this, R.anim.translate);
         anim.reset();
-
+        */
         //iv.clearAnimation();
         //iv.startAnimation(anim);
 
+
+        /*
         splashTread = new Thread() {
             @Override
             public void run() {
@@ -135,10 +164,40 @@ public class OhmVoltage extends AppCompatActivity {
             }
         };
         splashTread.start();
-
+        */
     }
 
 
+    public int getMovieWidth()
+    {
+        return movieWidth;
+    }
+    public int getMovieHeight()
+    {
+        return movieHeight;
+    }
+    public long getMovieDuration()
+    {
+        return movieDuration;
+    }
+
+    public void onDraw(Canvas canvas) {
+        long now = SystemClock.uptimeMillis();
+
+        if (movieStart == 0) {
+            movieStart = now;
+        }
+        if (gifMovie != null) {
+            int dur = gifMovie.duration();
+            if (dur == 0) {
+                dur = 1000;
+            }
+            int relTime = (int) ((now - movieStart) % dur);
+            gifMovie.setTime(relTime);
+            gifMovie.draw(canvas, 0, 0);
+
+        }
+    }
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
