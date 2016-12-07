@@ -95,4 +95,29 @@ public class OhmAnalyser {
         return (float)valueToV;
 
     }
+
+    public static float ConvertToOhm(float value, String unType)
+    {
+
+            double valueToOhm =0;
+            if(unType=="pΩ")
+                valueToOhm = (double)value*Math.pow(10,-12);
+            else if(unType=="nΩ")
+                valueToOhm = (double)value*Math.pow(10,-9);
+            else if(unType=="µΩ")
+                valueToOhm = (double)value*Math.pow(10,-6);
+            else if(unType=="mΩ")
+                valueToOhm = (double)value*Math.pow(10,-3);
+            else if(unType=="kΩ")
+                valueToOhm = (double)value*Math.pow(10,3);
+            else if(unType=="MΩ")
+                valueToOhm = (double)value*Math.pow(10,6);
+            else if(unType=="GΩ")
+                valueToOhm = (double)value*Math.pow(10,9);
+            else if(unType=="TΩ")
+                valueToOhm = (double)value*Math.pow(10,12);
+
+            return (float) valueToOhm;
+
+    }
 }

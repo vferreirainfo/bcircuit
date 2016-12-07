@@ -48,5 +48,27 @@
 
     </TableRow>
 
+    <TableRow
+        android:id="@+id/tableRow3"
+        android:layout_marginTop="-180dp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent"
+        android:backgroundTint="@color/colorPrimaryDark">
+
+
+
+        <Button
+            android:text="Calcular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:id="@+id/button"
+            android:textColor="@color/colorPrimary"
+            android:onClick="startAnimations"
+            android:background="@color/colorPrimaryDark" />
+    </TableRow>
+
 
 </RelativeLayout>
