@@ -1,12 +1,15 @@
 package vmac.boardcircuit;
 
 
-import android.content.Intent;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Movie;
 import android.graphics.PixelFormat;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.SystemClock;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -52,8 +55,9 @@ public class OhmVoltage extends AppCompatActivity {
     float originalValueA, originalValueR; // Estas duas variaveis irao guardar a conversao se         String voltagem;
     Resistor r = new Resistor();
     Result result= new Result();
-
+    private final int SPLASH_DISPLAY_LENGTH = 5000;
     String voltagem;
+    TextView outputResult;
     //para volts e amperes
 
     public void onAttachedToWindow() {
@@ -105,7 +109,7 @@ public class OhmVoltage extends AppCompatActivity {
 
 
         EditText mEdit, mEditI;
-        TextView outputResult;
+
         Spinner virtualSpinnerR, virtualSpinnerA;
 
 
@@ -140,7 +144,7 @@ public class OhmVoltage extends AppCompatActivity {
         findViewById(R.id.ampereText).setVisibility(View.INVISIBLE);
         findViewById(R.id.AmpereType).setVisibility(View.INVISIBLE);
         findViewById(R.id.button).setVisibility(View.INVISIBLE);
-        findViewById(R.id.img1).setVisibility(View.VISIBLE);
+
         //findViewById(R.id.waitMessage).setVisibility(View.VISIBLE);
 
         Animation anim = AnimationUtils.loadAnimation(this, R.anim.alpha);
@@ -151,47 +155,28 @@ public class OhmVoltage extends AppCompatActivity {
 
         anim = AnimationUtils.loadAnimation(this, R.anim.translate);
         anim.reset();
-
+        findViewById(R.id.img1).setVisibility(View.VISIBLE);
         //iv.clearAnimation();
         //iv.startAnimation(anim);
 
 
 
+        new Handler().postDelayed(new Runnable(){
 
-        /*
-                           */
-        splashTread = new Thread() {
+
             @Override
             public void run() {
-                try {
-                    int waited = 0;
-                    // Splash screen pause time
-                    while (waited < 3500) {
-                        sleep(100);
-                        waited += 100;
-                    }
-                    voltagem=Float.toString(OhmAnalyser.DeterminaTensao(r, originalValueA));
+                /* Create an Intent that will start the Menu-Activity. */
 
-
-                    Intent intent = new Intent(OhmVoltage.this,Result.class);//new splash screen result
-                    intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-                    result.setKey("V");
-                    result.setGrandeza("V");
-                    result.setValorVoltagem(Double.valueOf(voltagem));
-                    //result.ShowVoltage(intent);
-                    startActivity(intent);
-
-
-                } catch (InterruptedException e) {
-
-                } finally {
-
-                    //Splashscreen.this.finish();
-                }
-
+                voltagem=Float.toString(OhmAnalyser.DeterminaTensao(r, originalValueA));
+                findViewById(R.id.img1).setVisibility(View.INVISIBLE);
+                outputResult = (TextView) findViewById(R.id.resultMessage);
+                outputResult.setText(outputResult.getText()+voltagem+" V");
+                findViewById(R.id.resultMessage).setVisibility(View.VISIBLE);
             }
-        };
-        splashTread.start();
+        }, SPLASH_DISPLAY_LENGTH);
+        findViewById(R.id.img1).setVisibility(View.VISIBLE);
+
 
 
         //outputResult = (TextView) findViewById(R.id.resultMessage);
