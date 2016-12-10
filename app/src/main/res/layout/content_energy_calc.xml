@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/content_ohm_voltage"
+    android:id="@+id/content_energy_calc"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
@@ -10,17 +10,8 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="vmac.boardcircuit.OhmVoltage"
-    tools:showIn="@layout/activity_ohm_voltage">
-
-    <ImageView
-        android:layout_width="350dp"
-        android:layout_height="300dp"
-        android:background="@drawable/wait"
-        android:visibility="invisible"
-        android:id="@+id/img1"
-        />
-
+    tools:context="vmac.boardcircuit.EnergyCalc"
+    tools:showIn="@layout/activity_energy_calc">
 
     <TableRow
         android:id="@+id/tableRow1"
@@ -31,93 +22,72 @@
 
 
         <TextView
-            android:text="Valor resistencia"
+            android:text="Potencia"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="left"
             android:id="@+id/resisitorText" />
 
         <EditText
-            android:layout_width="60dp"
+            android:layout_width="90dp"
             android:layout_marginLeft="10dp"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:text=" "
+            android:layout_marginTop="-4dp"
             android:ems="10"
-            android:id="@+id/ohmInput" />
+            android:id="@+id/wattInput" />
 
         <Spinner
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+
             android:layout_marginLeft="5dp"
-            android:entries="@array/grandeza_resistencia"
-            android:id="@+id/ohmType" />
+            android:entries="@array/grandeza_watts"
+            android:id="@+id/wattType" />
 
 
     </TableRow>
+
 
     <TableRow
         android:id="@+id/tableRow2"
+        android:layout_height="280dp"
         android:layout_marginTop="50dp"
         android:gravity="left"
         android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:layout_height="match_parent">
+        android:orientation="vertical">
 
 
         <TextView
-            android:text="Valor corrente"
+            android:text="Tempo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="left"
-            android:id="@+id/ampereText" />
+            android:id="@+id/timeText" />
 
         <EditText
-            android:layout_width="60dp"
-            android:layout_marginLeft="30dp"
+            android:layout_width="90dp"
+            android:layout_marginLeft="20dp"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
+            android:layout_marginTop="-4dp"
             android:text=" "
+
             android:ems="10"
-            android:id="@+id/AmpereInput" />
+            android:id="@+id/timeInput" />
 
         <Spinner
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="5dp"
-            android:entries="@array/grandeza_corrente"
-            android:id="@+id/AmpereType" />
-
-    </TableRow>
-
-    <TableRow
-        android:id="@+id/tableRow3"
-        android:layout_marginTop="-75dp"
-        android:gravity="center"
-        android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:layout_height="match_parent"
-        android:backgroundTint="@color/colorPrimaryDark">
-
-
-
-        <Button
-            android:text="Calcular"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:id="@+id/button"
-            android:textColor="@color/colorPrimary"
-            android:onClick="startAnimations"
-            android:background="@color/colorPrimaryDark" />
+            android:entries="@array/grandeza_tempo"
+            android:id="@+id/timeType" />
 
 
     </TableRow>
-
-
-
 
 
 </RelativeLayout>

@@ -49,6 +49,7 @@
             android:layout_marginRight="20dp"
             android:background="@drawable/energy"
             android:layout_marginTop="5.5dp"
+            android:onClick="energyActivity"
             style="@android:style/Widget.Button" />
         <Button
             android:id="@+id/condbutton"
@@ -73,7 +74,7 @@
             android:layout_height="120dp"
             android:background="@drawable/capacitor"
             android:layout_marginTop="5.5dp"
-            android:onClick="ohmSelectActivity"
+            android:onClick="capacitorMenuActivity"
             style="@android:style/Widget.Button" />
 
         <Button

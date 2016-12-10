@@ -5,4 +5,7 @@
     <string name="title_activity_ohm_voltage">OhmVoltage</string>
     <string name="title_activity_sscreen">sscreen</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_energy_calc">EnergyCalc</string>
+    <string name="title_activity_result">Result</string>
+    <string name="title_activity_capacitor_menu">CapacitorMenu</string>
 </resources>

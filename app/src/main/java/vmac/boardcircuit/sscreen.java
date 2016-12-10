@@ -41,6 +41,17 @@ public class sscreen extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void energyActivity(View view) {
+        Intent intent = new Intent(this, EnergyCalc.class);
+        startActivity(intent);
+    }
+    public void capacitorMenuActivity(View view)
+    {
+        Intent intent = new Intent(this, CapacitorMenu.class);
+        startActivity(intent);
+    }
+
+
     public Action getIndexApiAction() {
         Thing object = new Thing.Builder()
                 .setName("SScreen Page") // TODO: Define a title for the content shown.

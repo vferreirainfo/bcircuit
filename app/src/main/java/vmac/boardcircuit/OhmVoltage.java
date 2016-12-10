@@ -18,6 +18,8 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
+import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.boardBO.Resistor;
 import com.example.OhmAnalyser;
@@ -27,8 +29,6 @@ import com.google.android.gms.appindexing.Thing;
 import com.google.android.gms.common.api.GoogleApiClient;
 
 import java.io.InputStream;
-
-import static vmac.boardcircuit.R.drawable.wait;
 
 public class OhmVoltage extends AppCompatActivity {
 
@@ -48,6 +48,13 @@ public class OhmVoltage extends AppCompatActivity {
     private int movieWidth, movieHeight;
     private long movieDuration;
     private long movieStart;
+    float valueA, valueR;
+    float originalValueA, originalValueR; // Estas duas variaveis irao guardar a conversao se         String voltagem;
+    Resistor r = new Resistor();
+    Result result= new Result();
+
+    String voltagem;
+    //para volts e amperes
 
     public void onAttachedToWindow() {
         super.onAttachedToWindow();
@@ -84,6 +91,7 @@ public class OhmVoltage extends AppCompatActivity {
 
     public void startAnimations(View view) {
 
+
         //gifInputStream = this.getResources().openRawResource(R.drawable.wait);
         gifInputStream = findViewById(R.id.img1).getResources().openRawResource(R.drawable.wait);
         gifMovie = Movie.decodeStream(gifInputStream);
@@ -92,23 +100,35 @@ public class OhmVoltage extends AppCompatActivity {
         movieDuration = gifMovie.duration();
 
 
-        final float valueA, valueR;
+        String resisitorOptionSelect, ampereOptionSelect; // ira ser guardada a grandeza da
+        /// resistencia e da corrente
+
 
         EditText mEdit, mEditI;
+        TextView outputResult;
+        Spinner virtualSpinnerR, virtualSpinnerA;
 
-        final Resistor r = new Resistor();
+
+        virtualSpinnerR = (Spinner) findViewById(R.id.ohmType);
+        resisitorOptionSelect = virtualSpinnerR.getSelectedItem().toString();
 
 
-        mEdit = (EditText)findViewById(R.id.ohmInput);
+        virtualSpinnerA = (Spinner) findViewById(R.id.AmpereType);
+        ampereOptionSelect = virtualSpinnerA.getSelectedItem().toString();
+
+        mEdit = (EditText) findViewById(R.id.ohmInput);
+
         valueR = Float.parseFloat(mEdit.getText().toString());
-        r.setResistenceValue(valueR);
 
-        mEditI = (EditText)findViewById(R.id.AmpereInput);
+
+        originalValueR = OhmAnalyser.ConvertToOhm(valueR, resisitorOptionSelect); // Este metodo faz a conversao
+        r.setResistenceValue(originalValueR);
+        // da resistencia para ohms brutos e devolve o resultado para a variavel originalValueR
+
+        mEditI = (EditText) findViewById(R.id.AmpereInput);
         valueA = Float.parseFloat(mEditI.getText().toString());
 
-
-
-
+        originalValueA = OhmAnalyser.ConvertToAmpere(valueA, ampereOptionSelect);
 
 
         //tudo o que aparece no formulario deve ser invisivel ... inclusive o botao
@@ -121,10 +141,8 @@ public class OhmVoltage extends AppCompatActivity {
         findViewById(R.id.AmpereType).setVisibility(View.INVISIBLE);
         findViewById(R.id.button).setVisibility(View.INVISIBLE);
         findViewById(R.id.img1).setVisibility(View.VISIBLE);
-        findViewById(R.id.waitMessage).setVisibility(View.VISIBLE);
+        //findViewById(R.id.waitMessage).setVisibility(View.VISIBLE);
 
-
-        /*
         Animation anim = AnimationUtils.loadAnimation(this, R.anim.alpha);
         anim.reset();
         RelativeLayout l = (RelativeLayout) findViewById(R.id.content_ohm_voltage);
@@ -133,39 +151,55 @@ public class OhmVoltage extends AppCompatActivity {
 
         anim = AnimationUtils.loadAnimation(this, R.anim.translate);
         anim.reset();
-        */
+
         //iv.clearAnimation();
         //iv.startAnimation(anim);
 
 
+
+
         /*
+                           */
         splashTread = new Thread() {
             @Override
             public void run() {
                 try {
                     int waited = 0;
                     // Splash screen pause time
-                    while (waited < 6500) {
+                    while (waited < 3500) {
                         sleep(100);
                         waited += 100;
                     }
-                    OhmAnalyser.DeterminaTensao(r, valueA);
+                    voltagem=Float.toString(OhmAnalyser.DeterminaTensao(r, originalValueA));
 
-                    Intent intent = new Intent(OhmVoltage.this,condutanceActivity.class);//new splash screen result
+
+                    Intent intent = new Intent(OhmVoltage.this,Result.class);//new splash screen result
                     intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                    result.setKey("V");
+                    result.setGrandeza("V");
+                    result.setValorVoltagem(Double.valueOf(voltagem));
+                    //result.ShowVoltage(intent);
                     startActivity(intent);
-                    //Splashscreen.this.finish();
+
+
                 } catch (InterruptedException e) {
-                    // do nothing
+
                 } finally {
+
                     //Splashscreen.this.finish();
                 }
 
             }
         };
         splashTread.start();
-        */
+
+
+        //outputResult = (TextView) findViewById(R.id.resultMessage);
+        //outputResult.setText("Valor da voltagem: {0} v "+voltagem, TextView.BufferType.NORMAL);
+        // do nothing
+
     }
+
 
 
     public int getMovieWidth()

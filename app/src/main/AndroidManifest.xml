@@ -32,13 +32,24 @@
             android:name=".sscreen"
             android:label="@string/title_activity_sscreen"
             android:theme="@style/AppTheme.NoActionBar">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
+        <activity
+            android:name=".EnergyCalc"
+            android:label="@string/title_activity_energy_calc"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Result"
+            android:label="@string/title_activity_result"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".CapacitorMenu"
+            android:label="@string/title_activity_capacitor_menu"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

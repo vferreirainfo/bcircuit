@@ -23,4 +23,32 @@
         <item>GA</item>
         <item>TA</item>
     </string-array>
+
+    <string-array name="grandeza_watts">
+        <item>pW</item>
+        <item>nW</item>
+        <item>µW</item>
+        <item>mW</item>
+        <item>W</item>
+        <item>kW</item>
+        <item>MW</item>
+        <item>GW</item>
+        <item>TW</item>
+    </string-array>
+
+    <string-array name="grandeza_tempo">
+        <item>ps</item>
+        <item>ns</item>
+        <item>µs</item>
+        <item>ms</item>
+        <item>s</item>
+        <item>m</item>
+        <item>h</item>
+        <item>dia(s)</item>
+        <item>semana(s)</item>
+        <item>mes(es)</item>
+        <item>ano(s)</item>
+    </string-array>
+
+
 </resources>
