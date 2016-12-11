@@ -30,7 +30,7 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".sscreen"
-            android:label="@string/title_activity_sscreen"
+            android:label="BoardCircuit"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -49,6 +49,10 @@
         <activity
             android:name=".CapacitorMenu"
             android:label="@string/title_activity_capacitor_menu"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".OhmResistor"
+            android:label="@string/title_activity_ohm_resistor"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

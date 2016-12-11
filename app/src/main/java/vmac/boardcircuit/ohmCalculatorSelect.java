@@ -34,5 +34,10 @@ public class ohmCalculatorSelect extends AppCompatActivity {
         Intent intent = new Intent(this, OhmVoltage.class);
         startActivity(intent);
     }
+    public void calculaResistenciaAct (View v)
+    {
+        Intent intent = new Intent(this, OhmResistor.class);
+        startActivity(intent);
+    }
 
 }

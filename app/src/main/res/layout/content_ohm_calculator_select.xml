@@ -47,6 +47,7 @@
             android:layout_height="100dp"
             android:layout_marginLeft="15dp"
             android:background="@drawable/amp"
+            android:onClick="calculaResistenciaAct"
             android:layout_marginTop="5.5dp"
             android:gravity="center"
             style="@android:style/Widget.Button" />

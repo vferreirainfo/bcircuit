@@ -24,6 +24,18 @@
         <item>TA</item>
     </string-array>
 
+    <string-array name="grandeza_voltagem">
+        <item>pV</item>
+        <item>nV</item>
+        <item>µV</item>
+        <item>mV</item>
+        <item>V</item>
+        <item>kV</item>
+        <item>MV</item>
+        <item>GV</item>
+        <item>TV</item>
+    </string-array>
+
     <string-array name="grandeza_watts">
         <item>pW</item>
         <item>nW</item>

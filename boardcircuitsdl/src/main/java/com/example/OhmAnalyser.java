@@ -123,7 +123,7 @@ public class OhmAnalyser {
 
     }
 
-    public static String convertToOriginalVolt(float result) {
+    public static String ConvertToOriginalVolt(float result) {
 
         int j = 0, k = 0, n = 13; //n = .000000000000
         int i = 0; //contadores
@@ -148,6 +148,7 @@ public class OhmAnalyser {
                 //Qual o tamanho de digitos ate ao ponto, determinado no while anterior??
                 if (i > 3 && i < 6) {
                     grand = "k";
+                    break;
                 }
             } else if (temp.charAt(k) == 0) // o primeiro digito nao e difrerente de 0
             {
@@ -155,7 +156,7 @@ public class OhmAnalyser {
                 //k++; //avançar k
                 //novo while
                 while (n >= temp.length()) {
-                    if (n != '.' && temp.charAt(n) != 0)// n nao e ponto e o caracter em n != 0
+                    if (n != '.') //&& temp.charAt(n) != 0)// n nao e ponto e o caracter em n != 0
                         n--;
                     else
                         break;
