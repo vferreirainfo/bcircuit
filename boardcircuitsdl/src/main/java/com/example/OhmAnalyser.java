@@ -45,6 +45,13 @@ public class OhmAnalyser {
         return result;
     }
 
+    public static float DeterminaCorrente(FonteTensao t, Resistor r)
+    {
+        float corrente;
+        corrente = t.getFontVolts()/r.getResistenceValue(); // I=U/R
+        return corrente;
+    }
+
     //O metodo abaixo converte a medida inserida em unType, e seu valor para volts
     public static float ConvertToVolts(float value, String unType) {
 
@@ -122,6 +129,7 @@ public class OhmAnalyser {
         return (float) valueToOhm;
 
     }
+
 
     public static String ConvertToOriginalVolt(float result) {
 

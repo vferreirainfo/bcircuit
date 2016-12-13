@@ -41,7 +41,7 @@ public class OhmVoltage extends AppCompatActivity {
     private GoogleApiClient client;
 
     float valueA, valueR;
-    float originalValueA, originalValueR; // Estas duas variaveis irao guardar a conversao se         String voltagem;
+    float originalValueA, originalValueR; // Estas duas variaveis irao guardar a conversao se         String current;
     Resistor r = new Resistor();
     Result result= new Result();
     private final int SPLASH_DISPLAY_LENGTH = 5000; //tempo de duraçao do splashscreen "thuderstorm"
@@ -65,7 +65,7 @@ public class OhmVoltage extends AppCompatActivity {
         setContentView(R.layout.activity_ohm_voltage);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Determinar voltagem");
+        getSupportActionBar().setTitle("Determinar resistencia");
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -149,7 +149,7 @@ public class OhmVoltage extends AppCompatActivity {
 
 
         //outputResult = (TextView) findViewById(R.id.resultMessage);
-        //outputResult.setText("Valor da voltagem: {0} v "+voltagem, TextView.BufferType.NORMAL);
+        //outputResult.setText("Valor da current: {0} v "+current, TextView.BufferType.NORMAL);
         // do nothing
 
     }

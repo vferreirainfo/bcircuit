@@ -53,6 +53,10 @@
         <activity
             android:name=".OhmResistor"
             android:label="@string/title_activity_ohm_resistor"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".OhmCurrent"
+            android:label="@string/title_activity_ohm_current"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

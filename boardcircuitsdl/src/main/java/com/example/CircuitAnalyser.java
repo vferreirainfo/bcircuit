@@ -1,5 +1,9 @@
 package com.example;
 
+import com.boardBO.FonteTensao;
+
+import java.sql.Time;
+
 /**
  * Created by vitor on 11-12-2016.
  */
@@ -14,5 +18,14 @@ public class CircuitAnalyser {
     //Calcular a tensao de determinado componente num circuito complexo
     //(...)
 
+
+
+
+    public float EnergyCalculator(float power, FonteTensao tensao, Time t)
+    {
+        float result=0;
+
+        return result;
+    }
 
 }

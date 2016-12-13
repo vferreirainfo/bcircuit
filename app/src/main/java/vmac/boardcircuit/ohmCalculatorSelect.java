@@ -39,5 +39,10 @@ public class ohmCalculatorSelect extends AppCompatActivity {
         Intent intent = new Intent(this, OhmResistor.class);
         startActivity(intent);
     }
+    public void calculaCorrenteAct(View v)
+    {
+        Intent intent = new Intent(this, OhmCurrent.class);
+        startActivity(intent);
+    }
 
 }

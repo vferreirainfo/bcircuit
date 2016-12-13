@@ -47,9 +47,9 @@
             android:layout_height="100dp"
             android:layout_marginLeft="15dp"
             android:background="@drawable/amp"
-            android:onClick="calculaResistenciaAct"
             android:layout_marginTop="5.5dp"
             android:gravity="center"
+            android:onClick="calculaCorrenteAct"
             style="@android:style/Widget.Button" />
 
     </TableRow>
@@ -67,6 +67,7 @@
             android:layout_height="100dp"
             android:layout_marginLeft="15dp"
             android:background="@drawable/cond"
+            android:onClick="calculaResistenciaAct"
             android:layout_marginTop="5.5dp"
             android:gravity="center"
             style="@android:style/Widget.Button" />
@@ -86,6 +87,7 @@
             android:layout_height="100dp"
             android:layout_marginLeft="15dp"
             android:background="@drawable/powericon"
+
             android:layout_marginTop="5.5dp"
             android:gravity="center"
             style="@android:style/Widget.Button" />
