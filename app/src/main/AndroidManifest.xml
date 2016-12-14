@@ -57,6 +57,14 @@
         <activity
             android:name=".OhmCurrent"
             android:label="@string/title_activity_ohm_current"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".CTotal"
+            android:label="@string/title_activity_ctotal"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".CapacitorInsert"
+            android:label="@string/title_activity_capacitor_insert"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

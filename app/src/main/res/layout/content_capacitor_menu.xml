@@ -52,5 +52,23 @@
 
     </TableRow>
 
+    <TableRow
+        android:id="@+id/tableRow3"
+        android:layout_height="450dp"
+        android:gravity="center"
+        android:layout_width="match_parent">
+
+        <Button
+            android:id="@+id/capacitbutton"
+            android:layout_width="70dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="15dp"
+            android:background="@drawable/capacitor"
+            android:layout_marginTop="5.5dp"
+            android:gravity="center"
+            style="@android:style/Widget.Button" />
+
+    </TableRow>
+
 
 </RelativeLayout>

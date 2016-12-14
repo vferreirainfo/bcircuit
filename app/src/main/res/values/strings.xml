@@ -10,4 +10,6 @@
     <string name="title_activity_capacitor_menu">CapacitorMenu</string>
     <string name="title_activity_ohm_resistor">OhmResistor</string>
     <string name="title_activity_ohm_current">OhmCurrent</string>
+    <string name="title_activity_ctotal">CTotal</string>
+    <string name="title_activity_capacitor_insert">CapacitorInsert</string>
 </resources>
