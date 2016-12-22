@@ -1,5 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <string-array name="grandeza_cond">
+        <item>pF</item>
+        <item>nF</item>
+        <item>µF</item>
+        <item>mF</item>
+        <item>F</item>
+        <item>kF</item>
+        <item>MF</item>
+        <item>GF</item>
+        <item>TF</item>
+    </string-array>
+
+    <string-array name="grandeza_condutancia">
+        <item>pS</item>
+        <item>nS</item>
+        <item>µS</item>
+        <item>mS</item>
+        <item>S</item>
+        <item>kS</item>
+        <item>MS</item>
+        <item>GS</item>
+        <item>TS</item>
+    </string-array>
+
+    <string-array name="grandeza_indut">
+        <item>pH</item>
+        <item>nH</item>
+        <item>µH</item>
+        <item>mH</item>
+        <item>H</item>
+        <item>kH</item>
+        <item>MH</item>
+        <item>GH</item>
+        <item>TH</item>
+    </string-array>
+
     <string-array name="grandeza_resistencia">
         <item>pΩ</item>
         <item>nΩ</item>

@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_ctotal_serie"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="vmac.boardcircuit.CTotalSerie"
+    tools:showIn="@layout/activity_ctotal_serie">
+
+    <!--C1 -->
+    <TableRow
+        android:id="@+id/tableRowC1"
+        android:layout_height="280dp"
+        android:gravity="left"
+        android:layout_width="match_parent"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:text="Condensador 1:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:id="@+id/c1Text" />
+        <!-- android:visibility="invisible-->
+
+
+
+        <EditText
+            android:layout_width="60dp"
+            android:layout_marginLeft="10dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:text=" "
+            android:ems="10"
+            android:id="@+id/c1Input" />
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="5dp"
+            android:entries="@array/grandeza_cond"
+            android:id="@+id/c1Type" />
+
+
+    </TableRow>
+
+    <!--C2 -->
+
+
+    <TableRow
+        android:id="@+id/tableRowC2"
+        android:layout_marginTop="20dp"
+        android:gravity="left"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:text="Condensador 2:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:id="@+id/c2Text" />
+
+        <EditText
+            android:layout_width="60dp"
+            android:layout_marginLeft="16dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:text=" "
+            android:ems="10"
+            android:id="@+id/c2Input" />
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="5dp"
+            android:entries="@array/grandeza_cond"
+            android:id="@+id/c2Type" />
+
+    </TableRow>
+
+    <!-- C3 -->
+
+    <TableRow
+        android:id="@+id/tableRowC3"
+        android:layout_marginTop="40dp"
+        android:gravity="left"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:text="Condensador 3:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:id="@+id/c3Text" />
+
+        <EditText
+            android:layout_width="60dp"
+            android:layout_marginLeft="16dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:text=" "
+            android:ems="10"
+            android:id="@+id/c3Input" />
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="5dp"
+            android:entries="@array/grandeza_cond"
+            android:id="@+id/c3Type" />
+
+    </TableRow>
+
+    <!-- C4 -->
+
+    <TableRow
+        android:id="@+id/tableRowC4"
+        android:layout_marginTop="60dp"
+        android:gravity="left"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:text="Condensador 4:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:id="@+id/c4Text" />
+
+        <EditText
+            android:layout_width="60dp"
+            android:layout_marginLeft="16dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:text=" "
+            android:ems="10"
+            android:id="@+id/c4Input" />
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="5dp"
+            android:entries="@array/grandeza_cond"
+            android:id="@+id/c4Type" />
+
+    </TableRow>
+
+
+    <!-- C5 -->
+    <TableRow
+        android:id="@+id/tableRowC5"
+        android:layout_marginTop="80dp"
+        android:gravity="left"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:text="Condensador 5:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:id="@+id/c5Text" />
+
+        <EditText
+            android:layout_width="60dp"
+            android:layout_marginLeft="16dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:text=" "
+            android:ems="10"
+            android:id="@+id/c5Input" />
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="5dp"
+            android:entries="@array/grandeza_cond"
+            android:id="@+id/c5Type" />
+
+    </TableRow>
+
+    <!--C6 -->
+    <TableRow
+        android:id="@+id/tableRowC6"
+        android:layout_marginTop="100dp"
+        android:gravity="left"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:text="Condensador 6:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:id="@+id/c6Text" />
+
+        <EditText
+            android:layout_width="60dp"
+            android:layout_marginLeft="16dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:text=" "
+            android:ems="10"
+            android:id="@+id/c6Input" />
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="5dp"
+            android:entries="@array/grandeza_cond"
+            android:id="@+id/c6Type" />
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow3"
+        android:layout_marginTop="400dp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent"
+        android:backgroundTint="@color/colorPrimaryDark">
+
+
+
+        <Button
+            android:text="Calcular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:id="@+id/button"
+            android:textColor="@color/colorPrimary"
+            android:onClick="startAnimations"
+            android:background="@color/colorPrimaryDark" />
+
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow4"
+        android:layout_marginTop="140dp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginBottom="150dp"
+            android:gravity="left"
+            android:layout_height="wrap_content"
+            android:id="@+id/resultMessage"
+            android:textStyle="normal|bold"
+            android:textSize="20sp"
+            android:textColor="@android:color/black"
+            android:text="Valor da voltagem: "
+            android:visibility="invisible" />
+
+    </TableRow>
+
+
+
+
+</RelativeLayout>

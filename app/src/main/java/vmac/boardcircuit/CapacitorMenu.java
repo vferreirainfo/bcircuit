@@ -1,5 +1,6 @@
 package vmac.boardcircuit;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -24,6 +25,13 @@ public class CapacitorMenu extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+    }
+
+    public void capacitorTotalSelect(View v)
+    {
+
+        Intent t = new Intent(this, TypeCTotal.class);
+        startActivity(t);
     }
 
 }

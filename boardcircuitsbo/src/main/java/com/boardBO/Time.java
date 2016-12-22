@@ -50,7 +50,7 @@ public class Time {
     {
         return days;
     }
-    public int setDias(int day)
+    public void setDias(int day)
     {
         days=day;
     }

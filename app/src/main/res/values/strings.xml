@@ -12,4 +12,6 @@
     <string name="title_activity_ohm_current">OhmCurrent</string>
     <string name="title_activity_ctotal">CTotal</string>
     <string name="title_activity_capacitor_insert">CapacitorInsert</string>
+    <string name="title_activity_type_ctotal">TypeCTotal</string>
+    <string name="title_activity_ctotal_serie">CTotalSerie</string>
 </resources>
