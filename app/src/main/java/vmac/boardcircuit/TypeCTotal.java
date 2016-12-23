@@ -13,23 +13,24 @@ public class TypeCTotal extends AppCompatActivity {
 
     int quantidadeCapacitors; //em serie ou paralelo
     EditText myQuanty;
-    //
-    CTotalSerie serie = new CTotalSerie();
+
 
 
 
     public void serieCapacitor (View v)
     {
+
+        Bundle b = new Bundle();
         String s;
-
-
         myQuanty = (EditText) findViewById(R.id.condensadorInput);
         s= myQuanty.getText().toString();
         quantidadeCapacitors = Integer.parseInt(s.trim()); //obter a quantidade de condensadores e
-        serie.setNumCapacSerie(quantidadeCapacitors);  /// A ver se nao vai dar barraca
+        b.putInt("_serie",quantidadeCapacitors);
         // converter para inteiro ... este cast e obrigatorio ser feito
         Intent serieIntent = new Intent(this, CTotalSerie.class);
-        serie.CalculateCapacSerial(serieIntent);
+        serieIntent.putExtras(b);
+        startActivity(serieIntent);
+        //serie.CalculateCapacSerial(serieIntent);
 
     }
     @Override

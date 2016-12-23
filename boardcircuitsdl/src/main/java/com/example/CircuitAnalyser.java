@@ -146,7 +146,9 @@ public class CircuitAnalyser {
         {
             intValueH = (double) value*Math.pow(10,12);
         }
+        return intValueH;
     }
+
 
 
 }
