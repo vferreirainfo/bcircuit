@@ -14,4 +14,6 @@
     <string name="title_activity_capacitor_insert">CapacitorInsert</string>
     <string name="title_activity_type_ctotal">TypeCTotal</string>
     <string name="title_activity_ctotal_serie">CTotalSerie</string>
+    <string name="title_activity_dc__power">DC_Power</string>
+    <string name="title_activity_capacitor_charge">CapacitorCharge</string>
 </resources>

@@ -1,6 +1,7 @@
 package com.example;
 
 import com.boardBO.FonteTensao;
+import com.boardBO.Resistor;
 
 import java.sql.Time;
 
@@ -63,6 +64,20 @@ public class CircuitAnalyser {
         int LENGTH=1500;
         float result=0;
 
+        return result;
+    }
+    public static float condutanceCalculator(Resistor res)
+    {
+        float valueR, result;
+        valueR = res.getResistenceValue();
+        result = 1/valueR;
+        return result;
+    }
+    public float condutanceCalc(Resistor r)
+    {
+        float valueR, result;
+        valueR = r.getResistenceValue();
+        result = 1/valueR;
         return result;
     }
 
@@ -148,7 +163,4 @@ public class CircuitAnalyser {
         }
         return intValueH;
     }
-
-
-
 }

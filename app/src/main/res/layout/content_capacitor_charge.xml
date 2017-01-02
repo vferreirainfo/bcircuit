@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/content_ohm_resistor"
+    android:id="@+id/content_capacitor_charge"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
@@ -10,16 +10,9 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="vmac.boardcircuit.OhmResistor"
-    tools:showIn="@layout/activity_ohm_resistor">
+    tools:context="vmac.boardcircuit.CapacitorCharge"
+    tools:showIn="@layout/activity_capacitor_charge">
 
-    <ImageView
-        android:layout_width="350dp"
-        android:layout_height="300dp"
-        android:background="@drawable/wait"
-        android:visibility="invisible"
-        android:id="@+id/img1"
-        />
 
 
     <TableRow
@@ -31,56 +24,61 @@
 
 
         <TextView
-            android:text="Valor voltagem"
+            android:text="Valor do Condensador: "
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="left"
-            android:id="@+id/voltText" />
+            android:id="@+id/dcVoltsText" />
 
         <EditText
-            android:layout_width="60dp"
+            android:layout_width="90dp"
             android:layout_marginLeft="10dp"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:text=" "
+            android:layout_marginTop="-4dp"
             android:ems="10"
-            android:id="@+id/voltInput" />
+            android:id="@+id/voltsInput" />
 
         <Spinner
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+
             android:layout_marginLeft="5dp"
             android:entries="@array/grandeza_voltagem"
-            android:id="@+id/voltType" />
+            android:id="@+id/dcVoltsType" />
 
 
     </TableRow>
 
+
     <TableRow
         android:id="@+id/tableRow2"
+        android:layout_height="280dp"
         android:layout_marginTop="50dp"
         android:gravity="left"
         android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:layout_height="match_parent">
+        android:orientation="vertical">
 
 
         <TextView
-            android:text="Valor corrente"
+            android:text="Valor da Voltagem:"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="left"
-            android:id="@+id/ampereText" />
+            android:id="@+id/dcCurrentText" />
 
         <EditText
-            android:layout_width="60dp"
-            android:layout_marginLeft="16dp"
+            android:layout_width="90dp"
+            android:layout_marginLeft="30dp"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
+            android:layout_marginTop="-4dp"
             android:text=" "
+
             android:ems="10"
-            android:id="@+id/AmpereInput" />
+            android:id="@+id/currentInput" />
 
         <Spinner
             android:layout_width="match_parent"
@@ -88,69 +86,30 @@
             android:layout_marginTop="10dp"
             android:layout_marginLeft="5dp"
             android:entries="@array/grandeza_corrente"
-            android:id="@+id/AmpereType" />
-
-    </TableRow>
-
-    <TableRow
-        android:id="@+id/tableRow3"
-        android:layout_marginTop="-75dp"
-        android:gravity="center"
-        android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:layout_height="match_parent"
-        android:backgroundTint="@color/colorPrimaryDark">
-
-
-
-        <Button
-            android:text="Calcular"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:id="@+id/button"
-            android:textColor="@color/colorPrimary"
-            android:onClick="startAnimations"
-            android:background="@color/colorPrimaryDark" />
-
-        <Button
-            android:text="Mostrar circuito"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="-110dp"
-            android:gravity="center"
-            android:visibility="invisible"
-            android:id="@+id/buttonShowC"
-            android:textColor="@color/colorPrimary"
-            android:onClick="showCircuitEq"
-            android:background="@color/colorPrimaryDark" />
+            android:id="@+id/dcCurrentType" />
 
 
     </TableRow>
 
     <TableRow
         android:id="@+id/tableRow4"
-        android:layout_marginTop="140dp"
+        android:layout_height="280dp"
+        android:layout_marginTop="25dp"
         android:gravity="center"
         android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:layout_height="match_parent">
+        android:orientation="vertical">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_marginLeft="5dp"
-            android:layout_marginBottom="150dp"
-            android:gravity="left"
+
+        <Button
+            android:text="Determinar potencia"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/resultMessage"
-            android:textStyle="normal|bold"
-            android:textSize="20sp"
-            android:textColor="@android:color/black"
-            android:text="Valor da voltagem: "
-            android:visibility="invisible" />
-
+            android:gravity="center"
+            android:id="@+id/button"
+            android:textColor="@color/colorPrimary"
+            android:onClick="calculateDCPower"
+            android:background="@color/colorPrimaryDark" />
     </TableRow>
-
 
 
 </RelativeLayout>

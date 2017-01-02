@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/content_energy_calc"
+    android:id="@+id/content_dc__power"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
@@ -10,8 +10,9 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="vmac.boardcircuit.EnergyCalc"
-    tools:showIn="@layout/activity_energy_calc">
+    tools:context="vmac.boardcircuit.DC_Power"
+    tools:showIn="@layout/activity_dc__power">
+
 
     <TableRow
         android:id="@+id/tableRow1"
@@ -22,11 +23,11 @@
 
 
         <TextView
-            android:text="Potencia"
+            android:text="Voltagem (DC)"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="left"
-            android:id="@+id/resisitorText" />
+            android:id="@+id/dcVoltsText" />
 
         <EditText
             android:layout_width="90dp"
@@ -36,7 +37,7 @@
             android:text=" "
             android:layout_marginTop="-4dp"
             android:ems="10"
-            android:id="@+id/wattInput" />
+            android:id="@+id/voltsInput" />
 
         <Spinner
             android:layout_width="match_parent"
@@ -44,8 +45,8 @@
             android:layout_marginTop="10dp"
 
             android:layout_marginLeft="5dp"
-            android:entries="@array/grandeza_watts"
-            android:id="@+id/wattType" />
+            android:entries="@array/grandeza_voltagem"
+            android:id="@+id/dcVoltsType" />
 
 
     </TableRow>
@@ -61,11 +62,11 @@
 
 
         <TextView
-            android:text="Tempo"
+            android:text="Corrente (DC)"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="left"
-            android:id="@+id/timeText" />
+            android:id="@+id/dcCurrentText" />
 
         <EditText
             android:layout_width="90dp"
@@ -76,37 +77,15 @@
             android:text=" "
 
             android:ems="10"
-            android:id="@+id/timeInput" />
+            android:id="@+id/currentInput" />
 
         <Spinner
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="5dp"
-            android:entries="@array/grandeza_tempo"
-            android:id="@+id/timeType" />
-
-
-    </TableRow>
-
-
-    <TableRow
-        android:id="@+id/tableRow3"
-        android:layout_height="280dp"
-        android:layout_marginTop="125dp"
-        android:gravity="left"
-        android:layout_width="match_parent"
-        android:orientation="vertical">
-
-
-        <TextView
-            android:text="Nao sei a potencia do equipamento? "
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="left"
-            android:id="@+id/infText" />
-
-
+            android:entries="@array/grandeza_corrente"
+            android:id="@+id/dcCurrentType" />
 
 
     </TableRow>
@@ -114,35 +93,21 @@
     <TableRow
         android:id="@+id/tableRow4"
         android:layout_height="280dp"
-        android:layout_marginTop="65dp"
+        android:layout_marginTop="25dp"
         android:gravity="center"
         android:layout_width="match_parent"
         android:orientation="vertical">
 
 
-        <Button
-            android:text="Determinar potencia"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:id="@+id/button"
-            android:textColor="@color/colorPrimary"
-            android:onClick="checkDCPower"
-            android:background="@color/colorPrimaryDark" />
-
-        <Button
-            android:text="Calcular"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:gravity="center"
-            android:id="@+id/button2"
-            android:textColor="@color/colorPrimary"
-            android:onClick="checkDCPower"
-            android:background="@color/colorPrimaryDark" />
-
-
-
+    <Button
+        android:text="Determinar potencia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:id="@+id/button"
+        android:textColor="@color/colorPrimary"
+        android:onClick="calculateDCPower"
+        android:background="@color/colorPrimaryDark" />
     </TableRow>
 
 </RelativeLayout>

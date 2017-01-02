@@ -52,6 +52,14 @@ public class OhmAnalyser {
         return corrente;
     }
 
+    public static float DeterminaPotenciaResistor(Resistor r, float current)
+    {
+        double power;
+        //p=r*i2
+        power=r.getResistenceValue() * (current*Math.exp(2));
+        return (float) power;
+    }
+
     //O metodo abaixo converte a medida inserida em unType, e seu valor para volts
     public static float ConvertToVolts(float value, String unType) {
 

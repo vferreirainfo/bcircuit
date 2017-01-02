@@ -65,7 +65,7 @@ public class OhmVoltage extends AppCompatActivity {
         setContentView(R.layout.activity_ohm_voltage);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Determinar resistencia");
+        getSupportActionBar().setTitle("Determinar voltagem");
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {

@@ -69,6 +69,14 @@
         <activity
             android:name=".CTotalSerie"
             android:label="@string/title_activity_ctotal_serie"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".DC_Power"
+            android:label="@string/title_activity_dc__power"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".CapacitorCharge"
+            android:label="@string/title_activity_capacitor_charge"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

@@ -102,6 +102,7 @@ public class OhmResistor extends AppCompatActivity {
                 outputResult.setText("Resultado: "+output+"Ω");
                 findViewById(R.id.img1).setVisibility(View.INVISIBLE);
                 findViewById(R.id.resultMessage).setVisibility(View.VISIBLE);
+                findViewById(R.id.buttonShowC).setVisibility(View.VISIBLE);
             }
         }, SPLASH_DISPLAY_LENGTH);
         findViewById(R.id.img1).setVisibility(View.VISIBLE);

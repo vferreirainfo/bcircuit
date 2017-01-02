@@ -30,6 +30,8 @@ public class TypeCTotal extends AppCompatActivity {
         Intent serieIntent = new Intent(this, CTotalSerie.class);
         serieIntent.putExtras(b);
         startActivity(serieIntent);
+
+
         //serie.CalculateCapacSerial(serieIntent);
 
     }

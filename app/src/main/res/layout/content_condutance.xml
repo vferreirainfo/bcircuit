@@ -13,6 +13,15 @@
     tools:context="vmac.boardcircuit.condutanceActivity"
     tools:showIn="@layout/activity_condutance">
 
+    <ImageView
+        android:layout_width="350dp"
+        android:layout_height="300dp"
+        android:background="@drawable/wait"
+        android:visibility="invisible"
+        android:id="@+id/img1"
+        />
+
+
     <TableRow
         android:id="@+id/tableRow1"
         android:layout_height="280dp"
@@ -26,7 +35,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="left"
-            android:id="@+id/resisitorText" />
+            android:id="@+id/ohmResisitorCText" />
 
         <EditText
             android:layout_width="60dp"
@@ -35,7 +44,7 @@
             android:inputType="textPersonName"
             android:text=" "
             android:ems="10"
-            android:id="@+id/ohmInput" />
+            android:id="@+id/ohmInputCondutance" />
 
         <Spinner
             android:layout_width="match_parent"
@@ -43,7 +52,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginLeft="5dp"
             android:entries="@array/grandeza_resistencia"
-            android:id="@+id/ohmType" />
+            android:id="@+id/ohmCondutanceType" />
 
 
     </TableRow>
@@ -64,11 +73,34 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:id="@+id/button"
+            android:id="@+id/buttonCondutanceCalc"
             android:textColor="@color/colorPrimary"
             android:onClick="startAnimations"
             android:background="@color/colorPrimaryDark" />
     </TableRow>
 
+
+    <TableRow
+        android:id="@+id/tableRow4"
+        android:layout_marginTop="140dp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginBottom="150dp"
+            android:gravity="left"
+            android:layout_height="wrap_content"
+            android:id="@+id/resultMessage"
+            android:textStyle="normal|bold"
+            android:textSize="20sp"
+            android:textColor="@android:color/black"
+            android:text="Valor da condutancia: "
+            android:visibility="invisible" />
+
+    </TableRow>
 
 </RelativeLayout>
