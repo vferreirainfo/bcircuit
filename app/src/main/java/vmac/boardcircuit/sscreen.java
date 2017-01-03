@@ -50,6 +50,11 @@ public class sscreen extends AppCompatActivity {
         Intent intent = new Intent(this, CapacitorMenu.class);
         startActivity(intent);
     }
+    public void showMeshRequire (View view)
+    {
+        Intent intent = new Intent(this,MeshRequire.class);
+        startActivity(intent);
+    }
 
 
     public Action getIndexApiAction() {

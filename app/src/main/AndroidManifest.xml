@@ -77,6 +77,14 @@
         <activity
             android:name=".CapacitorCharge"
             android:label="@string/title_activity_capacitor_charge"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".MeshRequire"
+            android:label="@string/title_activity_mesh_require"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".MeshFormulary"
+            android:label="@string/title_activity_mesh_formulary"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

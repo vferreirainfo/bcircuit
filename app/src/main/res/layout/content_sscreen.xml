@@ -84,7 +84,7 @@
             android:layout_marginLeft="-10dp"
             android:background="@drawable/mesh"
             android:layout_marginTop="5.5dp"
-            android:onClick="ohmSelectActivity"
+            android:onClick="showMeshRequire"
             style="@android:style/Widget.Button" />
         <Button
             android:id="@+id/diode"

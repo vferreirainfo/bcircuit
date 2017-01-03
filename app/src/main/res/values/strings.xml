@@ -16,4 +16,6 @@
     <string name="title_activity_ctotal_serie">CTotalSerie</string>
     <string name="title_activity_dc__power">DC_Power</string>
     <string name="title_activity_capacitor_charge">CapacitorCharge</string>
+    <string name="title_activity_mesh_require">MeshRequire</string>
+    <string name="title_activity_mesh_formulary">MeshFormulary</string>
 </resources>

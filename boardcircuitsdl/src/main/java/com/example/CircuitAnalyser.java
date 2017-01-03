@@ -26,7 +26,7 @@ public class CircuitAnalyser {
     double saveValueF;
     static double intValueF;
     static double intValueH;
-
+    static float valueOfUL;//Valor de Ul (tensao do indutor)
     public float totalSerieCapacitanceCalculator(String[] v, String[] meansures) {
         //passar todos os valores de String [] v para [] values
         for (count = 0; count < values.length; count++) {
@@ -79,6 +79,21 @@ public class CircuitAnalyser {
         valueR = r.getResistenceValue();
         result = 1/valueR;
         return result;
+    }
+
+    public static float calculaTensaoInductor (float valueL, float valueA, String typeCurrent)
+    {
+        //valueL is typed in Henry ... by default so we don't need any conversion
+
+        if(typeCurrent.equals("A"))
+        {
+            valueOfUL=0;
+        }
+        else if(typeCurrent.equals("A/S"))
+        {
+            valueOfUL = valueL * valueA;
+        }
+        return valueOfUL;
     }
 
     private static double convertToFahrad(double value, String meansure)

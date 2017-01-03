@@ -6,6 +6,11 @@ package com.boardBO;
 
 public class Circuito {
 
+
+
+    //Um circuito e um array de varias mesh
+
+    //Alterar ...
     Resistor [] res;
     Capacitor [] cap;
     FonteTensao[] fontesT;

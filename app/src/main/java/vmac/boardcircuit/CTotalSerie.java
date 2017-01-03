@@ -286,12 +286,13 @@ public class CTotalSerie extends AppCompatActivity {
 
                 for (int table = 0; table < getCapacitors-6; table++) {
 
-                    TableRow tblRow = new TableRow(this);
+
                     //Add a layout margin top of 20dp
                     while(table<getCapacitors-5) //0 < 25
                     {
 
-                        lp.setMargins(20,margin,50,10);
+                        TableRow tblRow = new TableRow(this);
+                        lp.setMargins(0,margin,0,0);
                         tblRow.setLayoutParams(lp);
 
                         TextView txt = new TextView(this);
@@ -309,7 +310,8 @@ public class CTotalSerie extends AppCompatActivity {
 
                     }
 
-
+                    if(table>=getCapacitors-5)
+                        break;
 
 
 
