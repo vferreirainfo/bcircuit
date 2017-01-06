@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/content_dc__power"
+    android:id="@+id/content_power_resistor_calc"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
@@ -10,16 +10,15 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="vmac.boardcircuit.DC_Power"
-    tools:showIn="@layout/activity_dc__power">
-
+    tools:context="vmac.boardcircuit.PowerResistorCalc"
+    tools:showIn="@layout/activity_power_resistor_calc">
 
     <ImageView
         android:layout_width="350dp"
         android:layout_height="300dp"
         android:background="@drawable/wait"
         android:visibility="invisible"
-        android:id="@+id/img1"
+        android:id="@+id/imgPw1"
         />
 
 
@@ -32,61 +31,56 @@
 
 
         <TextView
-            android:text="Voltagem (DC)"
+            android:text="Resistencia"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="left"
-            android:id="@+id/dcVoltsText" />
+            android:id="@+id/resistorPowerText" />
 
         <EditText
-            android:layout_width="90dp"
-            android:layout_marginLeft="10dp"
+            android:layout_width="60dp"
+            android:layout_marginLeft="20dp"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:text=" "
-            android:layout_marginTop="-4dp"
             android:ems="10"
-            android:id="@+id/voltsInput" />
+            android:id="@+id/resistorPowerInput" />
 
         <Spinner
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-
             android:layout_marginLeft="5dp"
-            android:entries="@array/grandeza_voltagem"
-            android:id="@+id/dcVoltsType" />
+            android:entries="@array/grandeza_resistencia"
+            android:id="@+id/resistorPowerType" />
 
 
     </TableRow>
 
-
     <TableRow
         android:id="@+id/tableRow2"
-        android:layout_height="280dp"
         android:layout_marginTop="50dp"
         android:gravity="left"
         android:layout_width="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_height="match_parent">
 
 
         <TextView
-            android:text="Corrente (DC)"
+            android:text="Corrente"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="left"
-            android:id="@+id/dcCurrentText" />
+            android:id="@+id/currentPowerText" />
 
         <EditText
-            android:layout_width="90dp"
-            android:layout_marginLeft="20dp"
+            android:layout_width="60dp"
+            android:layout_marginLeft="10dp"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
-            android:layout_marginTop="-4dp"
             android:text=" "
-
             android:ems="10"
-            android:id="@+id/currentInput" />
+            android:id="@+id/currentPowerInput" />
 
         <Spinner
             android:layout_width="match_parent"
@@ -94,31 +88,33 @@
             android:layout_marginTop="10dp"
             android:layout_marginLeft="5dp"
             android:entries="@array/grandeza_corrente"
-            android:id="@+id/dcCurrentType" />
-
+            android:id="@+id/currentPowerType" />
 
     </TableRow>
 
     <TableRow
-        android:id="@+id/tableRow6"
-        android:layout_height="280dp"
-        android:layout_marginTop="25dp"
+        android:id="@+id/tableRow3"
+        android:layout_marginTop="-75dp"
         android:gravity="center"
         android:layout_width="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_height="match_parent"
+        android:backgroundTint="@color/colorPrimaryDark">
 
 
-    <Button
-        android:text="Determinar potencia"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:id="@+id/button"
-        android:textColor="@color/colorPrimary"
-        android:onClick="calculateDCPower"
-        android:background="@color/colorPrimaryDark" />
+
+        <Button
+            android:text="Calcular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:id="@+id/button"
+            android:textColor="@color/colorPrimary"
+            android:onClick="startAnimations"
+            android:background="@color/colorPrimaryDark" />
+
+
     </TableRow>
-
 
     <TableRow
         android:id="@+id/tableRow4"
@@ -142,5 +138,7 @@
             android:visibility="invisible" />
 
     </TableRow>
+
+
 
 </RelativeLayout>

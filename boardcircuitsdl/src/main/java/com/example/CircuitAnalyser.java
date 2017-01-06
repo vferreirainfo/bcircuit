@@ -3,8 +3,6 @@ package com.example;
 import com.boardBO.FonteTensao;
 import com.boardBO.Resistor;
 
-import java.sql.Time;
-
 /**
  * Created by vitor on 11-12-2016.
  */
@@ -59,12 +57,18 @@ public class CircuitAnalyser {
     }
 
 
-    public float energyCalculator(float power, FonteTensao tensao, Time t)
+    public float energyCalculator(float power, FonteTensao tensao, com.boardBO.Time t, String type)
     {
-        int LENGTH=1500;
-        float result=0;
 
-        return result;
+
+        int LENGTH=1500;
+        float energy=0;
+
+        if(type.equals("d"))
+            energy = power * t.getDias();
+
+
+        return energy;
     }
     public static float condutanceCalculator(Resistor res)
     {

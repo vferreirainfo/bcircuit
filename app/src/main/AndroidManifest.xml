@@ -85,6 +85,10 @@
         <activity
             android:name=".MeshFormulary"
             android:label="@string/title_activity_mesh_formulary"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".PowerResistorCalc"
+            android:label="@string/title_activity_power_resistor_calc"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

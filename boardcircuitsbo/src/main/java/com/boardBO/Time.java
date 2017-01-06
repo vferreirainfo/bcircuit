@@ -15,6 +15,7 @@ public class Time {
     int days;
     int weeks;
     int months;
+    int hours;
     int years;
 
 
@@ -27,11 +28,11 @@ public class Time {
     public void Time(){
 
     }
-    public void Time(int dias)
+    public void Time (int dias)
     {
         days=dias;
     }
-    public void Time(int segundos, int minutos)
+    public void Time (int segundos, int minutos)
     {
         seconds=segundos;
         minutes = minutos;
@@ -44,11 +45,16 @@ public class Time {
 
     }
 
-
-
     public int getDias()
     {
-        return days;
+
+        if(days>=0)
+        {
+            return days;
+        }
+        else // nao faz sentido existir dias negativos
+            return -1;
+
     }
     public void setDias(int day)
     {
@@ -63,5 +69,53 @@ public class Time {
         weeks=week;
     }
 
+    public int getMonth()
+    {
+        return months;
+    }
+    public void setMonth(int month)
+    {
+        months=month;
+    }
+
+    public int getSecond() {
+
+        if(seconds>=0 && seconds<=60)
+            return seconds;
+        else
+            return -1;
+    }
+
+    public void setSecond(int second)
+    {
+        seconds=second;
+    }
+
+    public int getMinutes()
+    {
+        if(minutes>0&&minutes<=60)
+            return minutes;
+        else
+            return -1; //nao existem minutos negativos
+    }
+
+    public void setMinutes(int min)
+    {
+      minutes=min;
+    }
+
+
+    public int getHours()
+    {
+        if(hours>0 && hours<=24) // 1 dia
+           return hours;
+        else
+            return -1;
+    }
+
+    public void setHours(int hour)
+    {
+        hours=hour;
+    }
 
 }

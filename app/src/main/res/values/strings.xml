@@ -18,4 +18,5 @@
     <string name="title_activity_capacitor_charge">CapacitorCharge</string>
     <string name="title_activity_mesh_require">MeshRequire</string>
     <string name="title_activity_mesh_formulary">MeshFormulary</string>
+    <string name="title_activity_power_resistor_calc">PowerResistorCalc</string>
 </resources>

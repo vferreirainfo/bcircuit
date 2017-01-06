@@ -56,7 +56,7 @@ public class OhmAnalyser {
     {
         double power;
         //p=r*i2
-        power=r.getResistenceValue() * (current*Math.exp(2));
+        power=r.getResistenceValue() * Math.pow(current,2);
         return (float) power;
     }
 
