@@ -89,6 +89,10 @@
         <activity
             android:name=".PowerResistorCalc"
             android:label="@string/title_activity_power_resistor_calc"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".teste"
+            android:label="@string/title_activity_teste"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
