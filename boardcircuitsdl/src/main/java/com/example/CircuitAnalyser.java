@@ -59,13 +59,13 @@ public class CircuitAnalyser {
 
     public float energyCalculator(float power, FonteTensao tensao, com.boardBO.Time t, String type)
     {
-
-
         int LENGTH=1500;
         float energy=0;
 
         if(type.equals("d"))
-            energy = power * t.getDias();
+            energy = power * (t.getHours()*t.getDias());
+        if(type.equals("h"))
+            energy=power*(t.getHours());
 
 
         return energy;
