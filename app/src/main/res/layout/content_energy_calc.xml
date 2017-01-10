@@ -26,7 +26,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="left"
-            android:id="@+id/resisitorText" />
+            android:id="@+id/powerText" />
 
         <EditText
             android:layout_width="90dp"
@@ -138,7 +138,7 @@
             android:gravity="center"
             android:id="@+id/button2"
             android:textColor="@color/colorPrimary"
-            android:onClick="checkDCPower"
+            android:onClick="calculateEnergy"
             android:background="@color/colorPrimaryDark" />
 
 
