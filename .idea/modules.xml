@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/BoardCircuit.iml" filepath="$PROJECT_DIR$/BoardCircuit.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/bcircuit.iml" filepath="$PROJECT_DIR$/bcircuit.iml" />
       <module fileurl="file://$PROJECT_DIR$/boardcircuitsbo/boardcircuitsbo.iml" filepath="$PROJECT_DIR$/boardcircuitsbo/boardcircuitsbo.iml" />
